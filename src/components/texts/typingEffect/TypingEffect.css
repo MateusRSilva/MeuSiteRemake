@@ -1,0 +1,112 @@
+.textBoxContainer {
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  transform: translateX(-50%);
+  height: 7rem;
+  width: 90vw;
+  background-color: #8C8DC3;
+  border-radius: 0.625rem;
+}
+
+.textBoxContainer div:nth-child(1) {
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 0.5rem;
+  height: 84%;
+  border-radius: 0.3125rem;
+  font-family: "Press Start 2P";
+  color: #2c43d8;
+  overflow: auto;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 0.3125rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.3125rem grey; 
+  border-radius: 0.625rem;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2c43d8; 
+  border-radius: 0.625rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2c43d8af; 
+}
+
+.textBoxContainer div a {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.625rem;
+  white-space: pre-wrap ; 
+}
+
+.typing-container {
+  position: relative;
+  /* Adiciona posicionamento relativo para o container */
+  font-family: 'Press Start 2P', cursive;
+  /* Fonte estilo video game */
+  font-size: 1.5rem;
+  /* Ajuste o tamanho da fonte conforme necessário */
+  border-right: 0.125rem solid #000;
+  /* Cursor piscante */
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  /* Ajuste o comprimento da linha conforme necessário */
+}
+
+.typing-text {
+  display: inline;
+  animation: blink-caret 0.1s step-end infinite;
+}
+
+.triangle {
+  position: absolute;
+  bottom: 0.9375rem;
+  /* Ajuste conforme necessário */
+  right: 0.9375rem;
+  /* Ajuste conforme necessário */
+  width: 0;
+  height: 0rem;
+  border-left: 0.9375rem solid transparent;
+  /* Ajuste o tamanho do triângulo */
+  border-right: 0.9375rem solid transparent;
+  /* Ajuste o tamanho do triângulo */
+  border-top: 0.9375rem solid red;
+  /* Ajuste a cor conforme necessário */
+  animation: blink 1.5s infinite;
+  /* Animação piscante */
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: black;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

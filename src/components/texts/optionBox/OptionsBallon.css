@@ -1,0 +1,61 @@
+.optionsBallonContainer {
+    position: absolute;
+    top: 40%;
+    right: 1%;
+    transform: translateY(-50%);
+    height: auto;
+    width: auto;
+    padding: 0.4375rem;
+    background-color: #797aaa;
+    border-radius: 0.3125rem;
+}
+
+.ballon {
+    background-color: rgba(255, 255, 255, 0.70);
+    height: auto;
+    width: auto;
+    font-family: "Press Start 2P";
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.3125rem;
+}
+
+.optionItem {
+    height: 2.5rem;
+    width: 100%;
+    margin: 0 0.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.selectTriangle {
+    width: 0;
+    height: 0;
+    margin-top: -0.25rem;
+    border-left: 0.375rem solid transparent;
+    border-right: 0.375rem solid transparent;
+    border-top: 0.625rem solid black;
+    transform: rotate(-90deg);
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.blink {
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

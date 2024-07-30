@@ -1,0 +1,11 @@
+Model Information:
+* title:	Master Sword + Stand
+* source:	https://sketchfab.com/3d-models/master-sword-stand-39e3a29f0eff42d89d3dfc930ebe168d
+* author:	Calfan (https://sketchfab.com/Calfan)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Master Sword + Stand" (https://sketchfab.com/3d-models/master-sword-stand-39e3a29f0eff42d89d3dfc930ebe168d) by Calfan (https://sketchfab.com/Calfan) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
