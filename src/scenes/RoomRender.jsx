@@ -12,6 +12,7 @@ import Phone from '../components/objects3D/Phone';
 import MHW from '../components/objects3D/MHW';
 import Hollow from '../components/objects3D/Ace';
 import textPositions from '../components/objects3D/text3D/TextPositions';
+import Loading from '../components/Loading';
 import { OrbitControls } from '@react-three/drei';
 
 const RoomScene = () => {
@@ -60,14 +61,14 @@ const RoomScene = () => {
     }, []);
 
     return (
-        <Canvas camera={{ position: [12, 10, 30], fov: 30 }}>
-            <OrbitControls
-                ref={controlsRef}
-                enableZoom={false}
-                enablePan={false}
-                enableRotate={false}
-            />
-            <Suspense fallback={null}>
+        <Suspense fallback={<Loading />}>
+            <Canvas camera={{ position: [12, 10, 30], fov: 30 }}>
+                <OrbitControls
+                    ref={controlsRef}
+                    enableZoom={false}
+                    enablePan={false}
+                    enableRotate={false}
+                />
                 <group scale={scale}>
                     <ambientLight intensity={isToggled ? 1 : 3.5} />
                     <spotLight target={lightTargetZelda.current} angle={0.5} position={[1.5, 3, -3]} intensity={isToggled ? 1 : 25} penumbra={1} />
@@ -86,8 +87,8 @@ const RoomScene = () => {
                         <Text3D key={index} {...props} />
                     ))}
                 </group>
-            </Suspense>
-        </Canvas>
+            </Canvas>
+        </Suspense>
     );
 };
 

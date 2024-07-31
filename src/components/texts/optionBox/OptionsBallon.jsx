@@ -9,12 +9,13 @@ const OptionsBallon = () => {
     const [hoveredItem, setHoveredItem] = useState(null);
     const [selectedItem, setSelectedItem] = useState(null);
     const [key, setKey] = useState(0);
+    const [isVisible, setIsVisible] = useState(true); 
 
     const getFilteredText = () => {
         const topic = Content.find(t => t.topic === selectedTopic);
 
         if (topic) {
-            if (['Contato', 'Referencias', 'Redes', 'SobreMim', 'Conhecimentos', 'Diplomas','Projetos','Experiencia'].includes(selectedTopic)) {
+            if (['Contato', 'Referencias', 'Redes', 'SobreMim', 'Conhecimentos', 'Diplomas', 'Projetos', 'Experiencia'].includes(selectedTopic)) {
                 return topic.information;
             }
         }
@@ -27,8 +28,16 @@ const OptionsBallon = () => {
         setSelectedTitle(item.title);
         setSelectedItem(item);
         setLink(item.link || null);
-        setKey(prevKey => prevKey + 1); // Incrementa a chave para forçar a re-renderização
+        setKey(prevKey => prevKey + 1); 
     };
+
+    const handleExitClick = () => {
+        setIsVisible(false); 
+    };
+
+    if (!isVisible) {
+        return null; 
+    }
 
     return (
         <>
@@ -46,6 +55,15 @@ const OptionsBallon = () => {
                             <div className="optionTitle">{item.title}</div>
                         </div>
                     ))}
+                    <div
+                        className='optionItem'
+                        onMouseEnter={() => setHoveredItem(items.length)}
+                        onMouseLeave={() => setHoveredItem(null)}
+                        onClick={handleExitClick}
+                    >
+                        <div className={`selectTriangle ${hoveredItem === items.length ? 'blink' : ''}`} />
+                        <div className="optionTitle">Sair</div>
+                    </div>
                 </div>
             </div>
             {selectedItem && (
